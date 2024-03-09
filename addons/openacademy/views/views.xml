@@ -1,0 +1,114 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="openacademy.lista_usuarios">
+      <field name="name">openacademy list</field>
+      <field name="model">users</field> <!-- aquí indicamos el nombre de nuestra  clase-->
+      <field name="arch" type="xml">
+        <tree>
+          <!-- aquí debemos indicar los valores que tiene nuestra tabla / atributos de la clase-->
+          <field name="name"/>
+          <field name="description"/>
+            <!-- aquí añadimos nuevos elementos como los botones
+               <button string="Nuevo Curso" type="object" name="action_nuevo_curso"/> Action_nuevo_curso es el nombre de la funcion
+                <button string="Agregar Usuario" type="object" name="action_agregar_usuario"/>-->
+
+        </tree>
+      </field>
+    </record>
+
+     <record model="ir.ui.view" id="openacademy.lista_cursos">
+      <field name="name">openacademy list</field>
+      <field name="model">courses</field> <!-- aquí indicamos el nombre de nuestra  clase-->
+      <field name="arch" type="xml">
+        <tree>
+          <!-- aquí debemos indicar los valores que tiene nuestra tabla / atributos de la clase-->
+          <field name="name"/>
+          <field name="description"/>
+
+        </tree>
+      </field>
+    </record>
+
+
+        <record model="ir.ui.view" id="openacademy.lista_puntuacion">
+      <field name="name">openacademy list</field>
+      <field name="model">puntuacion</field> <!-- aquí indicamos el nombre de nuestra  clase-->
+      <field name="arch" type="xml">
+        <tree>
+          <!-- aquí debemos indicar los valores que tiene nuestra tabla / atributos de la clase-->
+          <field name="name"/>
+          <field name="description"/>
+
+        </tree>
+      </field>
+    </record>
+
+
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="openacademy.action_window_usuarios">
+    <field name="name">openacademy window</field>
+    <field name="res_model">users</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<record model="ir.actions.act_window" id="openacademy.action_window_cursos">
+    <field name="name">openacademy window</field>
+    <field name="res_model">courses</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+      <record model="ir.actions.act_window" id="openacademy.action_window_puntuacion">
+    <field name="name">openacademy window</field>
+    <field name="res_model">puntuacion</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="openacademy.action_server">
+      <field name="name">openacademy server</field>
+      <field name="model_id" ref="model_openacademy_openacademy"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="openacademy" id="openacademy.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Menu de tablas" id="openacademy.menu_1" parent="openacademy.menu_root"/>
+      <menuitem name="Menu Tabla Puntuación " id="openacademy.menu_puntuacion" parent="openacademy.menu_root"  action="openacademy.action_window_puntuacion"/>
+
+
+    <!-- actions -->
+
+    <menuitem name="listausuarios" id="openacademy.menu_1_list" parent="openacademy.menu_1"
+              action="openacademy.action_window_usuarios"/>
+
+    <menuitem name="Listacourses" id="openacademy.menu_1_list2" parent="openacademy.menu_1"
+              action="openacademy.action_window_cursos"/>
+
+       <menuitem name="Listapuntuacion" id="openacademy.menu_1_list3" parent="openacademy.menu_1"
+              action="openacademy.action_window_puntuacion"/>
+    <!--
+    <menuitem name="Server to list" id="openacademy" parent="openacademy.menu_2"
+              action="openacademy.action_server"/>
+-->
+  </data>
+</odoo>

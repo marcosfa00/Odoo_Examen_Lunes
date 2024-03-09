@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_openacademy_users,openacademy.openacademy,model_users,base.group_user,1,1,1,1
+access_openacademy_courses,openacademy.openacademy,model_courses,base.group_user,1,1,1,1
+access_openacademy_puntuacion,openacademy.openacademy,model_puntuacion,base.group_user,1,1,1,1

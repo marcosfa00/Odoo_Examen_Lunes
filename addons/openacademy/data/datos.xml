@@ -1,0 +1,29 @@
+<odoo>
+    <data>
+
+
+         <record model="courses" id="openacademy.cursos">
+            <!-->Aquñi indicaremso que campos tiene la talba, o haremso referencia a ellso mejro dicho<-->
+            <field name="name">DAM2</field>
+            <field name="description">Damian apruebame</field>
+
+        </record>
+        <record model="users" id="openacademy.usuarios">
+            <!-->Aquñi indicaremso que campos tiene la talba, o haremso referencia a ellso mejro dicho<-->
+            <field name="name">Marcos</field>
+            <field name="description">Viva Alonso</field>
+
+        </record>
+
+         <record model="puntuacion" id="openacademy.puntuacion">
+            <!-->Aquñi indicaremso que campos tiene la talba, o haremso referencia a ellso mejro dicho<-->
+            <field name="name">Marcos</field>
+            <field name="description">Tiene una puntuacion de 0</field>
+
+        </record>
+
+
+
+    </data>
+
+</odoo>
